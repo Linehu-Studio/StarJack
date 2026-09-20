@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "someone/awesome-agi-agent",
+    "stars": 12400,
+    "index": 93.3,
+    "verdict": "crime_scene",
+    "estimatedFakePercent": 100,
+    "scannedAt": "2026-09-01T12:00:00Z",
+    "note": "example entry — 12k stars in 3 days, 0 forks, 2 watchers"
+  },
+  {
+    "repo": "someone/mcp-ultra-suite",
+    "stars": 8100,
+    "index": 78.4,
+    "verdict": "jacked",
+    "estimatedFakePercent": 82.5,
+    "scannedAt": "2026-09-05T12:00:00Z",
+    "note": "example entry — lockstep bursts every 30 minutes"
+  },
+  {
+    "repo": "someone/vibe-code-100x",
+    "stars": 5600,
+    "index": 64.1,
+    "verdict": "jacked",
+    "estimatedFakePercent": 61.2,
+    "scannedAt": "2026-09-08T12:00:00Z",
+    "note": "example entry — ghost accounts created in the same week"
+  },
+  {
+    "repo": "someone/real-open-source-tool",
+    "stars": 23000,
+    "index": 12.6,
+    "verdict": "clean",
+    "estimatedFakePercent": null,
+    "scannedAt": "2026-09-10T12:00:00Z",
+    "note": "control sample — organic growth over 4 years"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "@starjack/engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StarJack fake-star detection engine — isomorphic, zero Node-specific deps",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "lz-string": "^1.5.0"
+  }
+}

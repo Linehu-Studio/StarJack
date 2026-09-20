@@ -1,0 +1,28 @@
+{
+  "name": "starjack",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub fake-star public execution tool — You can buy stars, but you can't buy dignity.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "engine",
+    "templates",
+    "cli",
+    "web"
+  ],
+  "scripts": {
+    "test": "bun test engine",
+    "typecheck": "tsc --noEmit && cd web && tsc --noEmit",
+    "scan": "bun cli/src/index.ts",
+    "auth": "bun cli/src/index.ts auth",
+    "dev": "bun --cwd web dev",
+    "build:web": "bun --cwd web build",
+    "build:cli": "bun build --compile cli/src/index.ts --outfile starjack"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "@types/node": "^20",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0d;
+  --bg-elev: #121216;
+  --bg-card: #16161b;
+  --border: #26262e;
+  --border-strong: #3a3a45;
+  --text: #d6d3cc;
+  --text-dim: #8b8880;
+  --text-faint: #5c5a54;
+  --accent: #e5484d;
+  --accent-dim: #b33a3e;
+  --ok: #46a758;
+  --warn: #f5a623;
+  --mono: ui-monospace, "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  --sans: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --serif: Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 布局 ─────────────────────────────── */
+.shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.nav-brand {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-brand b {
+  color: var(--accent);
+}
+
+.nav-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+}
+.nav-link:hover {
+  color: var(--text);
+}
+.nav-spacer {
+  flex: 1;
+}
+
+/* ── 通用组件 ─────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elev);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn:hover {
+  border-color: var(--accent);
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: var(--accent-dim);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.input {
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elev);
+  color: var(--text);
+  outline: none;
+}
+.input:focus {
+  border-color: var(--accent);
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-dim);
+}
+.tag-clean { color: var(--ok); border-color: var(--ok); }
+.tag-suspect { color: var(--warn); border-color: var(--warn); }
+.tag-jacked { color: var(--accent); border-color: var(--accent); }
+.tag-crime_scene { color: #fff; background: var(--accent); border-color: var(--accent); }
+.tag-empty { color: var(--text-faint); }
+
+.muted { color: var(--text-dim); }
+.faint { color: var(--text-faint); }
+.mono { font-family: var(--mono); }
+
+/* ── 首页 ─────────────────────────────── */
+.hero {
+  padding: 36px 0 28px;
+}
+.hero h1 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.hero h1 b {
+  color: var(--accent);
+}
+.hero p {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 15px;
+}
+.slogan {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+.phase-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  padding: 3px 0;
+}
+.phase-row.active { color: var(--text); }
+.phase-row.done { color: var(--ok); }
+
+/* ── 报告页 ───────────────────────────── */
+.score-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.score-num {
+  font-family: var(--mono);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1;
+}
+.score-sub { color: var(--text-dim); }
+
+.dim-row {
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+.dim-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.dim-name { width: 170px; flex-shrink: 0; }
+.dim-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-elev);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.dim-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+.dim-score {
+  font-family: var(--mono);
+  width: 40px;
+  text-align: right;
+}
+.evidence {
+  margin: 6px 0 0 182px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.ghost-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.ghost-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.ghost-card img {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  filter: grayscale(1);
+}
+.ghost-login {
+  font-family: var(--mono);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ghost-score {
+  font-size: 11px;
+  color: var(--accent);
+}
+
+/* ── 讣告页 ───────────────────────────── */
+.obit-page {
+  filter: grayscale(1);
+  font-family: var(--serif);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.obit-frame {
+  border: 1px solid var(--border-strong);
+  outline: 1px solid var(--border);
+  outline-offset: 6px;
+  padding: 48px 40px;
+  text-align: center;
+}
+.obit-cross {
+  font-size: 26px;
+  letter-spacing: 12px;
+  color: var(--text-faint);
+  margin-bottom: 22px;
+}
+.obit-title {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.35;
+}
+.obit-sub {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 15px;
+}
+.obit-dates {
+  margin: 26px 0 4px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.obit-stats {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+.obit-stat b {
+  display: block;
+  font-size: 22px;
+  color: var(--text);
+  font-family: var(--mono);
+}
+.obit-stat span {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+.cause {
+  border-top: 1px solid var(--border);
+  padding: 12px 0;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.cause-evidence {
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin: 4px 0 12px;
+  line-height: 1.6;
+}
+.obit-epitaph {
+  margin: 30px auto 0;
+  max-width: 440px;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.obit-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── 排行榜 ───────────────────────────── */
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.lb-table th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-strong);
+}
+.lb-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.lb-table td.mono {
+  font-size: 13px;
+}
+.lb-table a {
+  color: var(--text);
+  text-decoration: none;
+}
+.lb-table a:hover {
+  color: var(--accent);
+}
+
+.section-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-faint);
+  margin: 34px 0 14px;
+}

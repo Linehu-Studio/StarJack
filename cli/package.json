@@ -1,0 +1,21 @@
+{
+  "name": "@starjack/cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "starjack — GitHub fake-star public execution CLI",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "starjack": "./src/index.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@starjack/engine": "workspace:*",
+    "@starjack/templates": "workspace:*",
+    "@clack/prompts": "^0.11.0",
+    "commander": "^14.0.0",
+    "picocolors": "^1.1.1"
+  }
+}

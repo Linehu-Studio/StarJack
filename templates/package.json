@@ -1,0 +1,14 @@
+{
+  "name": "@starjack/templates",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StarJack obituary templates — standalone HTML + WebAudio dirge",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@starjack/engine": "workspace:*"
+  }
+}
